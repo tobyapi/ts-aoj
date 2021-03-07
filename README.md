@@ -2,11 +2,11 @@
 
 [Aizu Online Judge](https://onlinejudge.u-aizu.ac.jp/home) client for TypeScript.
 
-# Installation
+# Usage
+```ts
+import * as aoj from 'ts-aoj';
 
-```
-$ npm install --save-dev ts-aoj
-$ yarn add --dev ts-aoj
+aoj.user.get("tobias").then(user => console.log(user));
 ```
 
 # Documentation

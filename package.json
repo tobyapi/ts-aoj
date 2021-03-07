@@ -1,8 +1,8 @@
 {
   "name": "ts-aoj",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "AOJ client",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build",
@@ -16,7 +16,7 @@
   },
   "author": "tobyapi",
   "license": "MIT",
-  "filese": [
+  "files": [
     "dist"
   ],
   "bugs": {
