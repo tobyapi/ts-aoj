@@ -11,11 +11,11 @@ jobs:
   build:
     strategy:
       fail-fast: false
-        matrix:
-          include:
-            - {os: ubuntu-latest}
-            - {os: macos-latest}
-            - {os: windows-latest}
+      matrix:
+        include:
+          - {os: ubuntu-latest}
+          - {os: macos-latest}
+          - {os: windows-latest}
     runs-on: ${{matrix.os}}
 
     steps:
