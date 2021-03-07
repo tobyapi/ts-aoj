@@ -1,8 +1,6 @@
 name: CI
 
-on:
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 env:
   FILE_PATTERN: "{src,__tests__}/**/*.{ts,tsx,js,jsx}"
