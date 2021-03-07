@@ -1,4 +1,4 @@
-import * as aoj from "../src/index";
+import * as aoj from "../src/index"
 
 test("get user", async () => {
   const tobias = await aoj.user.get("tobias");
