@@ -8,8 +8,7 @@
     "prepublishOnly": "npm run build",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "eslint src/index.ts",
-    "lint:fix": "eslint --fix src/index.ts"
+    "fmt": "prettier --write 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -43,13 +42,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
-    },
-    "lint-staged": {
-      "**/*": "prettier --write --ignore-unknown"
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,ts}": "eslint --cache --fix",
+    "*.ts": "tsc --noEmit",
+    "*.{js,ts,json}": "prettier --write"
   }
 }
