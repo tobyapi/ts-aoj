@@ -20,21 +20,25 @@ interface Submission {
 }
 
 interface SourceCode {
-  judgeId: number,
-  userId: string,
-  problemId: string,
-  language: string,
-  cpuTime: number,
-  memory: number,
-  submissionDate: number,
-  policy: string,
-  sourceCode: string,
+  judgeId: number
+  userId: string
+  problemId: string
+  language: string
+  cpuTime: number
+  memory: number
+  submissionDate: number
+  policy: string
+  sourceCode: string
   reviewed: number
 }
 
 type Submissions = Array<Submission>
 
-export const post = async (problemId: string, language: string, sourceCode: string) => {
+export const post = async (
+  problemId: string,
+  language: string,
+  sourceCode: string,
+) => {
   const url = `${AOJ_URL}/submissions`
   const response = await axios.post<Submissions>(url, {
     problemId: problemId,
@@ -61,14 +65,23 @@ export const getByUserId = async (
   return response
 }
 
-export const getByProblemId = async (problem_id: string, page: number, size: number) => {
+export const getByProblemId = async (
+  problem_id: string,
+  page: number,
+  size: number,
+) => {
   const params = `page=${page}&size=${size}`
   const url = `${AOJ_URL}/submission_records/problems/${problem_id}?${params}`
   const response = await axios.get<Submissions>(url)
   return response
 }
 
-export const getByUserIdAndProblemId = async (user_id: string, problem_id: string, page: number, size: number) => {
+export const getByUserIdAndProblemId = async (
+  user_id: string,
+  problem_id: string,
+  page: number,
+  size: number,
+) => {
   const params = `page=${page}&size=${size}`
   const url = `${AOJ_URL}/submission_records/users/${user_id}/problems/${problem_id}?${params}`
   const response = await axios.get<Submissions>(url)
