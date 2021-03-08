@@ -8,7 +8,11 @@ export const all = async (page: number, size: number) => {
   return response
 }
 
-export const getByUserId = async (user_id: string, page: number, size: number) => {
+export const getByUserId = async (
+  user_id: string,
+  page: number,
+  size: number,
+) => {
   const params = `page=${page}&size=${size}`
   const url = `${AOJ_URL}/problems/users/${user_id}?${params}`
   const response = await axios.get(url)
@@ -33,7 +37,10 @@ export const getByLargeCl = async (large_cl: string) => {
   return response
 }
 
-export const getByLargeClAndMiddleCl = async (large_cl: string, middle_cl: string) => {
+export const getByLargeClAndMiddleCl = async (
+  large_cl: string,
+  middle_cl: string,
+) => {
   const url = `${AOJ_URL}/problems/cl/${large_cl}/${middle_cl}`
   const response = await axios.get(url)
   return response

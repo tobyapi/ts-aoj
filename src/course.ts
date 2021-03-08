@@ -7,7 +7,10 @@ export const get = async () => {
   return response
 }
 
-export const getByClassification = async (large_cl: string, middle_cl: string) => {
+export const getByClassification = async (
+  large_cl: string,
+  middle_cl: string,
+) => {
   const url = `${AOJ_URL}/challenges/cl/${large_cl}/${middle_cl}`
   const response = await axios.get(url)
   return response
