@@ -55,22 +55,22 @@ export const register = async (
 
 export const get = async (user_id: string) => {
   const response = await axios.get<User>(`${AOJ_URL}/users/${user_id}`)
-  return response.data
+  return response
 }
 
 export const all = async (page: number, size: number) => {
   const response = await axios.get(`${AOJ_URL}/users?page=${page}&size=${size}`)
-  return response.data
+  return response
 }
 
 export const ordeBySolved = async (page: number, size: number) => {
   const url = `${AOJ_URL}/users/ranking/solved?page=${page}&size=${size}`
   const response = await axios.get(url)
-  return response.data
+  return response
 }
 
 export const ordeByRating = async (page: number, size: number) => {
   const url = `${AOJ_URL}/users/ranking/rating?page=${page}&size=${size}`
   const response = await axios.get(url)
-  return response.data
+  return response
 }
