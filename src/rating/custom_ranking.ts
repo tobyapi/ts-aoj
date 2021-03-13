@@ -5,7 +5,7 @@ export const contests = async () => {
   const url = `${JUDGE_DAT_URL}/rating/rankings/contests`
   const response = await axios.get(url)
   return response
-} 
+}
 
 export const languages = async () => {
   const url = `${JUDGE_DAT_URL}/rating/rankings/languages`
