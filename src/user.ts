@@ -59,7 +59,9 @@ export const get = async (user_id: string) => {
 }
 
 export const all = async (page: number, size: number) => {
-  const response = await axios.get(`${JUDGE_API_URL}/users?page=${page}&size=${size}`)
+  const response = await axios.get(
+    `${JUDGE_API_URL}/users?page=${page}&size=${size}`,
+  )
   return response
 }
 
