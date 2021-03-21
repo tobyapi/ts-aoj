@@ -5,3 +5,8 @@ import * as aoj from '../src/index'
     expect(response.status).toBe(200)
   });
   
+  test("get all", async () => {
+    const response = await aoj.problem.all(3, 10)
+    expect(response.status).toBe(200)
+  });
+  
